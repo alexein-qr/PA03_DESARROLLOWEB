@@ -1,11 +1,12 @@
-# TaskFlow Solutions - API de Gestión de Tareas
+# Proyecto: TaskFlow Solutions API
 
-Este repositorio contiene el desarrollo de la API RESTful para la empresa "TaskFlow Solutions", diseñada para gestionar tareas colaborativas dentro de un equipo de trabajo en tiempo real.
+## 1. Diseño de la Arquitectura (Pregunta 1)
+Para cumplir con los requisitos de escalabilidad y buenas prácticas, se ha diseñado una **Arquitectura en Capas (Layered Architecture)** siguiendo el patrón **Controlador-Servicio-Repositorio**:
 
-## Progreso del Proyecto
+* **Capa de Controladores (Rutas):** Recibe las peticiones HTTP de los usuarios y gestiona los eventos en tiempo real.
+* **Capa de Servicios (Lógica de Negocio):** Contiene las reglas para asignar y actualizar tareas.
+* **Capa de Repositorios (Acceso a Datos):** Maneja la comunicación directa con la base de datos de forma aislada.
 
-* **Diseño de Arquitectura:** Planificación de una arquitectura backend escalable en capas (Controladores, Servicios y Repositorios).
-* **Servidor Web:** Configuración inicial del servidor utilizando Node.js y Express, con integración de WebSockets para el manejo de estados en tiempo real.
-* **Desarrollo de la API:** Definición del modelo de datos de tareas (título, descripción, prioridad, estado y usuario asignado) e implementación de operaciones CRUD completas con filtros de búsqueda.
-* **Base de Datos:** Configuración de la conexión a una base de datos no relacional (MongoDB).
-* **Control de Versiones:** Registro, control de cambios y documentación del progreso centralizados en este repositorio de GitHub.
+### Justificación de Tecnologías
+* **Servidor Web:** Se configuró utilizando **Node.js** con el framework **Express** por su ligereza y alto rendimiento.
+* **Tiempo Real:** Se integra **Socket.io** para permitir que las actualizaciones de los estados de las tareas se transmitan en tiempo real de forma bidireccional a todo el equipo de trabajo.
